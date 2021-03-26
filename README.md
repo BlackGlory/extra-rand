@@ -17,9 +17,7 @@ yarn add extra-rand
 function random(min: number, max: number): number
 ```
 
-```ts
-[min, max)
-```
+Return a number in the range `[min, max)`.
 
 ### randomInt
 
@@ -27,9 +25,7 @@ function random(min: number, max: number): number
 function randomInt(min: number, max: number): number
 ```
 
-```ts
-[Math.ceil(min), Math.floor(max))
-```
+Return an integer in the range `[Math.ceil(min), Math.floor(max))`.
 
 ### randomIntInclusive
 
@@ -37,6 +33,4 @@ function randomInt(min: number, max: number): number
 function randomIntInclusive(min: number, max: number): number
 ```
 
-```ts
-[Math.ceil(min), Math.floor(max)]
-```
+Return an integer in the range `[Math.ceil(min), Math.floor(max)]`.
