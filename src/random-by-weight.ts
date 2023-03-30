@@ -10,5 +10,6 @@ export function randomByWeight(weights: number[]): number {
       return i
     }
   }
-  return weights.length - 1
+
+  throw new Error('Impossible route')
 }
