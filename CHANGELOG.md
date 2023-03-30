@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/BlackGlory/extra-rand/compare/v0.1.3...v0.1.4) (2023-03-30)
+
+
+### Features
+
+* add `mapToIndexByWeight` ([d8896b5](https://github.com/BlackGlory/extra-rand/commit/d8896b5672ed1241d864bbb33d88fab1c9d74372))
+
 ### [0.1.3](https://github.com/BlackGlory/extra-rand/compare/v0.1.2...v0.1.3) (2023-03-30)
 
 
