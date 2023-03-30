@@ -37,7 +37,7 @@ function randomByWeight(weights: number[]): number
 
 The function returns an index of one of weights.
 
-### Linear Map
+### Map
 These low-level methods help you to use random number generators other than `Math.random()`.
 
 #### mapToRange
@@ -55,5 +55,14 @@ function mapToIntRange(
   value: number
 , oldMin: number, oldMax: number
 , newMin: number, newMax: number
+): number
+```
+
+#### mapToIndexByWeight
+```ts
+function mapByWeight(
+  value: number
+, oldMin: number, oldMax: number
+, weights: number[]
 ): number
 ```
