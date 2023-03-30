@@ -1,5 +1,9 @@
+import { mapToIntRange } from './map-to-int-range'
+
 export function randomIntInclusive(min: number, max: number): number {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
+  return mapToIntRange(
+    Math.random()
+  , 0, 1
+  , Math.ceil(min), Math.floor(max) + 1
+  )
 }

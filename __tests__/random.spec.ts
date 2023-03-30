@@ -2,7 +2,7 @@ import { random } from '@src/random'
 import { countup } from 'extra-generator'
 
 describe('random(min: number, max: number): number', () => {
-  it('return number in [min, max)', () => {
+  it('returns a number in [min, max)', () => {
     const min = 0.1
     const max = 9.9
 

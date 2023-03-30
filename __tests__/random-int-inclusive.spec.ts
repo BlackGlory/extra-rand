@@ -2,7 +2,7 @@ import { randomIntInclusive } from '@src/random-int-inclusive'
 import { countup } from 'extra-generator'
 
 describe('randomIntInclusive(min: number, max: number): number', () => {
-  it('return integer in [Math.ceil(min), Math.floor(max)]', () => {
+  it('returns an integer in [Math.ceil(min), Math.floor(max)]', () => {
     const min = 0.1
     const max = 9.9
 

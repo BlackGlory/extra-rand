@@ -1,3 +1,6 @@
 export * from './random'
 export * from './random-int'
 export * from './random-int-inclusive'
+
+export * from './map-to-range'
+export * from './map-to-int-range'
