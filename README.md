@@ -30,6 +30,13 @@ function randomIntInclusive(min: number, max: number): number
 
 The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`.
 
+### randomByWeight
+```ts
+function randomByWeight(weights: number[]): number
+```
+
+The function returns an index of one of weights.
+
 ### Linear Map
 These low-level methods help you to use random number generators other than `Math.random()`.
 
