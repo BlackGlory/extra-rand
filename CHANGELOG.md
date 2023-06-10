@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/BlackGlory/extra-rand/compare/v0.1.4...v0.1.5) (2023-06-10)
+
+
+### Bug Fixes
+
+* export src ([1c11cb2](https://github.com/BlackGlory/extra-rand/commit/1c11cb21b8dabd2899ef385401307ff62fe0a8ff))
+
 ### [0.1.4](https://github.com/BlackGlory/extra-rand/compare/v0.1.3...v0.1.4) (2023-03-30)
 
 
