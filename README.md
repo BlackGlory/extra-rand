@@ -49,15 +49,6 @@ function mapToRange(
 ): number
 ```
 
-#### mapToIntRange
-```ts
-function mapToIntRange(
-  value: number
-, oldMin: number, oldMax: number
-, newMin: number, newMax: number
-): number
-```
-
 #### mapToIndexByWeight
 ```ts
 function mapByWeight(
