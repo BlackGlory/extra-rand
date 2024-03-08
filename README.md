@@ -37,10 +37,7 @@ function randomByWeight(weights: number[]): number
 
 The function returns an index of one of weights.
 
-### Map
-These low-level functions help you to use random number generators other than `Math.random()`.
-
-#### mapToRange
+### mapToRange
 ```ts
 function mapToRange(
   value: number
@@ -49,7 +46,9 @@ function mapToRange(
 ): number
 ```
 
-#### mapToIndexByWeight
+A low-level function helps you to use random number generators other than `Math.random()`.
+
+### mapToIndexByWeight
 ```ts
 function mapByWeight(
   value: number
@@ -57,3 +56,5 @@ function mapByWeight(
 , weights: number[]
 ): number
 ```
+
+A low-level function helps you to use random number generators other than `Math.random()`.
