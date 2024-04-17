@@ -30,6 +30,11 @@ function randomIntInclusive(min: number, max: number): number
 
 The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`.
 
+### randomBool
+```ts
+function randomBool(probabilityOfTrue: number): boolean
+```
+
 ### randomByWeight
 ```ts
 function randomByWeight(weights: number[]): number
