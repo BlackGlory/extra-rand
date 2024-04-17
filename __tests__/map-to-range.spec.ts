@@ -1,4 +1,5 @@
-import { mapToRange } from '@src/map-to-range'
+import { describe, test, expect } from 'vitest'
+import { mapToRange } from '@src/map-to-range.js'
 
 describe('mapToRange', () => {
   test('[0, 1] to [10, 20]', () => {

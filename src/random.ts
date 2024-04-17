@@ -1,4 +1,4 @@
-import { mapToRange } from './map-to-range'
+import { mapToRange } from './map-to-range.js'
 
 export function random(min: number, max: number): number {
   return mapToRange(

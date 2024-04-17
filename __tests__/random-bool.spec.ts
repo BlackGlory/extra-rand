@@ -1,4 +1,5 @@
-import { randomBool } from '@src/random-bool'
+import { test, expect } from 'vitest'
+import { randomBool } from '@src/random-bool.js'
 
 test('randomBool', () => {
   const loops = 10000

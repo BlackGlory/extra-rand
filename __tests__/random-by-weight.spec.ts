@@ -1,21 +1,23 @@
-import { randomByWeight } from '@src/random-by-weight'
+import { describe, test, expect } from 'vitest'
+import { randomIndexByWeight } from '@src/random-index-by-weight.js'
+import { NonEmptyArray } from 'justypes'
 
-describe('randomByWeight', () => {
+describe('randomIndexByWeight', () => {
   test('[0, 100]', () => {
-    const weights = [0, 100]
+    const weights: NonEmptyArray<number> = [0, 100]
 
     for (let i = 10000; i--;) {
-      const index = randomByWeight(weights)
+      const index = randomIndexByWeight(weights)
 
       expect(index === 1).toBe(true)
     }
   })
 
   test('[100, 0]', () => {
-    const weights = [100, 0]
+    const weights: NonEmptyArray<number> = [100, 0]
 
     for (let i = 10000; i--;) {
-      const index = randomByWeight(weights)
+      const index = randomIndexByWeight(weights)
 
       expect(index === 0).toBe(true)
     }
@@ -23,11 +25,11 @@ describe('randomByWeight', () => {
 
   test('[50, 50]', () => {
     const loops = 10000
-    const weights = [50, 50]
+    const weights: NonEmptyArray<number> = [50, 50]
 
     const counters = [0, 0]
     for (let i = loops; i--;) {
-      const index = randomByWeight(weights)
+      const index = randomIndexByWeight(weights)
       counters[index]++
     }
 
@@ -39,11 +41,11 @@ describe('randomByWeight', () => {
 
   test('[20, 80]', () => {
     const loops = 10000
-    const weights = [20, 80]
+    const weights: NonEmptyArray<number> = [20, 80]
 
     const counters = [0, 0]
     for (let i = loops; i--;) {
-      const index = randomByWeight(weights)
+      const index = randomIndexByWeight(weights)
       counters[index]++
     }
 

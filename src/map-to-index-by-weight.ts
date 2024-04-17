@@ -1,9 +1,10 @@
-import { mapToRange } from './map-to-range'
+import { NonEmptyArray } from 'justypes'
+import { mapToRange } from './map-to-range.js'
 
 export function mapToIndexByWeight(
   value: number
 , oldMin: number, oldMax: number
-, weights: number[]
+, weights: NonEmptyArray<number>
 ): number {
   const newMin = 0
   const newMax = weights.reduce((acc, cur) => acc + Math.max(cur, 0))
