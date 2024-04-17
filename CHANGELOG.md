@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/BlackGlory/extra-rand/compare/v0.2.0...v0.2.1) (2024-04-17)
+
+
+### Features
+
+* add `randomBool` ([18db19d](https://github.com/BlackGlory/extra-rand/commit/18db19d7a9b93073fd8b16c4872faaec918baf88))
+
 ## [0.2.0](https://github.com/BlackGlory/extra-rand/compare/v0.1.5...v0.2.0) (2024-03-08)
 
 
