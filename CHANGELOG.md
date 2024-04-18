@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BlackGlory/extra-rand/compare/v0.2.1...v0.3.0) (2024-04-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* - Removed `randomIntByModel`, `randomIntInclusiveByModel`
+- Rewritten `randomByModel`
+* - Rename `randomByWeight` to `randomIndexByWeight`
+- CommonJS => ESM
+- It requires Node.js >= v18.17.0
+
+### Features
+
+* add model-related functions ([35777f3](https://github.com/BlackGlory/extra-rand/commit/35777f3864b293f64917e9ba7b7d467caee4f38b))
+* export `IRandomModel` ([eeeb5be](https://github.com/BlackGlory/extra-rand/commit/eeeb5be5f80caac975bf06259144a5642773bbc3))
+
+
+* replace `randomIntByModel`, `randomIntInclusiveByModel` with `randomByModel` ([8ff1f62](https://github.com/BlackGlory/extra-rand/commit/8ff1f62eaf9055b37a6379146847e5bd9bd0360e))
+
 ### [0.2.1](https://github.com/BlackGlory/extra-rand/compare/v0.2.0...v0.2.1) (2024-04-17)
 
 
