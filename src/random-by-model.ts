@@ -27,11 +27,11 @@ export type IRandomModel =
 export function randomByModel(model: IRandomModel): number {
   if (isNumber(model)) {
     return model
+  } else if (isFunction(model)) {
+    return model()
   } else if (isArray(model)) {
     const subModel = randomByWeightModel(model)
     return randomByModel(subModel)
-  } else if (isFunction(model)) {
-    return model()
   } else {
     const { type, min, max } = model
     switch (type) {
