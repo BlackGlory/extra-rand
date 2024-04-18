@@ -1,6 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { randomByModel } from '@src/random-by-model.js'
-import { IRandomModel } from '@src/types.js'
+import { randomByModel, IRandomModel, Type } from '@src/random-by-model.js'
 
 describe('randomByModel', () => {
   test('number', () => {
@@ -13,18 +12,64 @@ describe('randomByModel', () => {
     }
   })
 
-  test('min, max', () => {
-    const model: IRandomModel = {
-      min: 0.1
-    , max: 9.9
-    }
+  test('getter', () => {
+    const value = 0.5
+    const model: IRandomModel = () => value
 
     for (let i = 10000; i--;) {
       const result = randomByModel(model)
 
-      expect(result).toBeGreaterThanOrEqual(model.min)
-      expect(result).toBeLessThan(model.max)
+      expect(result).toBe(value)
     }
+  })
+
+  describe('min, max', () => {
+    test('float', () => {
+      const model: IRandomModel = {
+        type: Type.Float
+      , min: 0.1
+      , max: 9.9
+      }
+
+      for (let i = 10000; i--;) {
+        const result = randomByModel(model)
+
+        expect(result).toBeGreaterThanOrEqual(model.min)
+        expect(result).toBeLessThan(model.max)
+      }
+    })
+
+    test('integer', () => {
+      const model: IRandomModel = {
+        type: Type.Integer
+      , min: 0.1
+      , max: 9.9
+      }
+
+      for (let i = 10000; i--;) {
+        const result = randomByModel(model)
+
+        expect(Number.isInteger(result)).toBe(true)
+        expect(result).toBeGreaterThanOrEqual(Math.ceil(model.min))
+        expect(result).toBeLessThan(Math.floor(model.max))
+      }
+    })
+
+    test('integer inclusive', () => {
+      const model: IRandomModel = {
+        type: Type.IntegerInclusive
+      , min: 0.1
+      , max: 9.9
+      }
+
+      for (let i = 10000; i--;) {
+        const result = randomByModel(model)
+
+        expect(Number.isInteger(result)).toBe(true)
+        expect(result).toBeGreaterThanOrEqual(Math.ceil(model.min))
+        expect(result).toBeLessThanOrEqual(Math.floor(model.max))
+      }
+    })
   })
 
   test('weighted', () => {

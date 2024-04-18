@@ -1,5 +1,3 @@
-export { IRandomModel } from './types.js'
-
 export * from './random.js'
 export * from './random-int.js'
 export * from './random-int-inclusive.js'
@@ -8,8 +6,6 @@ export * from './random-index-by-weight.js'
 export * from './random-weighted.js'
 export * from './random-by-weight-model.js'
 export * from './random-by-model.js'
-export * from './random-int-by-model.js'
-export * from './random-int-inclusive-by-model.js'
 
 export * from './map-to-range.js'
 export * from './map-to-index-by-weight.js'

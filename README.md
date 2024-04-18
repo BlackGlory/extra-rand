@@ -9,19 +9,6 @@ yarn add extra-rand
 ```
 
 ## API
-```ts
-type IRandomModel =
-| number
-| {
-    min: number
-    max: number
-  }
-| NonEmptyArray<{
-    weight: number
-    value: IRandomModel
-  }>
-```
-
 ### random
 ```ts
 function random(min: number, max: number): number
@@ -76,17 +63,26 @@ function randomByWeightModel<T>(model: IWeightModel<T>): number
 
 ### randomByModel
 ```ts
+enum Type {
+  Float
+, Integer
+, IntegerInclusive
+}
+
+type IRandomModel =
+| number
+| Getter<number>
+| {
+    type: Type
+    min: number
+    max: number
+  }
+| NonEmptyArray<{
+    weight: number
+    value: IRandomModel
+  }>
+
 function randomByModel(model: IRandomModel): number
-```
-
-### randomIntByModel
-```ts
-function randomIntByModel(model: IRandomModel): number
-```
-
-### randomIntInclusiveByModel
-```ts
-function randomIntInclusiveByModel(model: IRandomModel): number
 ```
 
 ### mapToRange
