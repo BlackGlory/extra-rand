@@ -28,6 +28,19 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@blackglory/errors@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@blackglory/errors/-/errors-3.0.3.tgz#a03e7cc2bc71a94a23e2bb64dcd48da863c575ac"
+  integrity sha512-wVflMlDn0opIApeNNOANGoG71AOmi+CKIln7KUexAhrwo/MN/txUECLacTZNhRiEJKroDM3MkOIINRG4F06PZg==
+  dependencies:
+    "@blackglory/pass" "^1.1.0"
+    extra-utils "^5.1.1"
+
+"@blackglory/pass@^1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@blackglory/pass/-/pass-1.1.1.tgz#91e1cf9988cb14e58c7252a20b6b410fd3b6b9bc"
+  integrity sha512-amK123up/MF1ico/Zuvm8aGWU9iWj8D64IOaq5Mn1fAP/hHZ/8JM7ypkE88Nr8UXhpfDA+9Gdh9TXzXjYA6z9A==
+
 "@commitlint/cli@^19.2.2":
   version "19.2.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-19.2.2.tgz#7b6d78596dcf6d716942b147aa07c04c4ee126df"
@@ -1538,6 +1551,14 @@ execa@^8.0.1:
     onetime "^6.0.0"
     signal-exit "^4.1.0"
     strip-final-newline "^3.0.0"
+
+extra-utils@^5.1.1:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/extra-utils/-/extra-utils-5.8.0.tgz#82fe3832414c878b5cd145d534d20765759b4c3c"
+  integrity sha512-iPWd1NTVOVXoZdHKQjjAN8VfQdL953Yrhr715Vb+AeyS4CzrcGihXmCsIjqj0TivFehyl7ayOluZ5GbH6D8Dmg==
+  dependencies:
+    justypes "^4.2.0"
+    lodash-es "^4.17.21"
 
 extra-utils@^5.7.0:
   version "5.7.0"

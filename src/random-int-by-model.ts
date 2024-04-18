@@ -1,3 +1,4 @@
+import { assert } from '@blackglory/errors'
 import { isArray, isNumber } from 'extra-utils'
 import { randomByWeightModel } from './random-by-weight-model.js'
 import { IRandomModel } from './types.js'
@@ -5,6 +6,8 @@ import { randomInt } from './random-int.js'
 
 export function randomIntByModel(model: IRandomModel): number {
   if (isNumber(model)) {
+    assert(Number.isInteger(model), 'The value must be an integer')
+
     return model
   } else if (isArray(model)) {
     const subModel = randomByWeightModel(model)
