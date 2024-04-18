@@ -1,5 +1,5 @@
 import { NonEmptyArray } from 'justypes'
-import { randomWeighted } from './random-by-weighted.js'
+import { randomWeighted } from './random-weighted.js'
 
 export type IWeightModel<T> = NonEmptyArray<{
   weight: number
