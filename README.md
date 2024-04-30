@@ -9,9 +9,16 @@ yarn add extra-rand
 ```
 
 ## API
+```ts
+interface IRandomNumberGenerator {
+  next(): number // [0, 1)
+}
+```
+
 ### random
 ```ts
 function random(min: number, max: number): number
+function random(generator: IRandomNumberGenerator, min: number, max: number): number
 ```
 
 The function returns a number in the range `[min, max)`.
@@ -19,6 +26,7 @@ The function returns a number in the range `[min, max)`.
 ### randomInt
 ```ts
 function randomInt(min: number, max: number): number
+function randomInt(generator: IRandomNumberGenerator, min: number, max: number): number
 ```
 
 The function returns an integer in the range `[Math.ceil(min), Math.floor(max))`.
@@ -26,6 +34,11 @@ The function returns an integer in the range `[Math.ceil(min), Math.floor(max))`
 ### randomIntInclusive
 ```ts
 function randomIntInclusive(min: number, max: number): number
+function randomIntInclusive(
+  generator: IRandomNumberGenerator
+, min: number
+, max: number
+): number
 ```
 
 The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`.
@@ -33,11 +46,16 @@ The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`
 ### randomBool
 ```ts
 function randomBool(probabilityOfTrue: number): boolean
+function randomBool(generator: IRandomNumberGenerator, probabilityOfTrue: number): boolean
 ```
 
 ### randomIndexByWeight
 ```ts
 function randomIndexByWeight(weights: NonEmptyArray<number>): number
+function randomIndexByWeight(
+  generator: IRandomNumberGenerator
+, weights: NonEmptyArray<number>
+): number
 ```
 
 The function returns an index of one of weights.
@@ -49,6 +67,10 @@ interface IWeighted {
 }
 
 function randomWeighted<T extends IWeighted>(values: NonEmptyArray<T>): T
+function randomWeighted<T extends IWeighted>(
+  generator: IRandomNumberGenerator
+, values: NonEmptyArray<T>
+): T
 ```
 
 ### randomByWeightModel
@@ -58,7 +80,8 @@ type IWeightModel<T> = NonEmptyArray<{
   value: T
 }>
 
-function randomByWeightModel<T>(model: IWeightModel<T>): number
+function randomByWeightModel<T>(model: IWeightModel<T>): T
+function randomByWeightModel<T>(generator: IRandomNumberGenerator, model: IWeightModel<T>): T
 ```
 
 ### randomByModel
@@ -82,7 +105,9 @@ type IRandomModel =
     value: IRandomModel
   }>
 
+
 function randomByModel(model: IRandomModel): number
+function randomByModel(generator: IRandomNumberGenerator, model: IRandomModel): number
 ```
 
 ### mapToRange

@@ -1,3 +1,5 @@
+export * from './types.js'
+
 export * from './random.js'
 export * from './random-int.js'
 export * from './random-int-inclusive.js'
