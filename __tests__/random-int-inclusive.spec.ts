@@ -1,7 +1,11 @@
 import { test, expect } from 'vitest'
 import { randomIntInclusive } from '@src/random-int-inclusive.js'
+import { NativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
-test('randomIntInclusive', () => {
+test.each([
+  randomIntInclusive
+, randomIntInclusive.bind(null, NativeRandomNumberGenerator)
+])('randomIntInclusive', randomIntInclusive => {
   const min = 0.1
   const max = 9.9
 
