@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/BlackGlory/extra-rand/compare/v0.3.0...v0.3.1) (2024-04-30)
+
+
+### Features
+
+* add `IRandomNumberGenerator` support ([69294a6](https://github.com/BlackGlory/extra-rand/commit/69294a6407a83c079c91a524307d11e241e64db4))
+
 ## [0.3.0](https://github.com/BlackGlory/extra-rand/compare/v0.2.1...v0.3.0) (2024-04-18)
 
 
