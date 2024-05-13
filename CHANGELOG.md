@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/BlackGlory/extra-rand/compare/v0.3.1...v0.3.2) (2024-05-13)
+
+
+### Features
+
+* add `shuffle` ([fa4c854](https://github.com/BlackGlory/extra-rand/commit/fa4c854f3417607e8be2ff466b4f4507324e2f83))
+
 ### [0.3.1](https://github.com/BlackGlory/extra-rand/compare/v0.3.0...v0.3.1) (2024-04-30)
 
 
