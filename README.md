@@ -110,6 +110,12 @@ function randomByModel(model: IRandomModel): number
 function randomByModel(generator: IRandomNumberGenerator, model: IRandomModel): number
 ```
 
+### shuffle
+```ts
+function shuffle(arr: unknown[]): void
+function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
+```
+
 ### mapToRange
 ```ts
 function mapToRange(
