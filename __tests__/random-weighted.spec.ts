@@ -1,11 +1,11 @@
 import { describe, test, expect } from 'vitest'
 import { randomWeighted } from '@src/random-weighted.js'
 import { NonEmptyArray } from 'justypes'
-import { NativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
   randomWeighted
-, randomWeighted.bind(null, NativeRandomNumberGenerator) as typeof randomWeighted
+, randomWeighted.bind(null, nativeRandomNumberGenerator) as typeof randomWeighted
 ])('randomWeighted', randomWeighted => {
   test('[0, 100]', () => {
     const values: NonEmptyArray<{

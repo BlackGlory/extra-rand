@@ -1,11 +1,11 @@
 import { describe, test, expect } from 'vitest'
 import { randomIndexByWeight } from '@src/random-index-by-weight.js'
 import { NonEmptyArray } from 'justypes'
-import { NativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
   randomIndexByWeight
-, randomIndexByWeight.bind(null, NativeRandomNumberGenerator)
+, randomIndexByWeight.bind(null, nativeRandomNumberGenerator)
 ])('randomIndexByWeight', randomIndexByWeight => {
   test('[0, 100]', () => {
     const weights: NonEmptyArray<number> = [0, 100]

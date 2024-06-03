@@ -1,10 +1,10 @@
 import { describe, test, expect } from 'vitest'
 import { randomByWeightModel, IWeightModel } from '@src/random-by-weight-model.js'
-import { NativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
   randomByWeightModel
-, randomByWeightModel.bind(null, NativeRandomNumberGenerator) as typeof randomByWeightModel
+, randomByWeightModel.bind(null, nativeRandomNumberGenerator) as typeof randomByWeightModel
 ])('randomByWeightModel', randomByWeightModel => {
   test('[0, 100]', () => {
     const model: IWeightModel<number> = [

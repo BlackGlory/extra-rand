@@ -1,10 +1,10 @@
 import { test, expect } from 'vitest'
 import { randomBool } from '@src/random-bool.js'
-import { NativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 test.each([
   randomBool
-, randomBool.bind(null, NativeRandomNumberGenerator)
+, randomBool.bind(null, nativeRandomNumberGenerator)
 ])('randomBool', randomBool => {
   const loops = 10000
   const counters = [0, 0]

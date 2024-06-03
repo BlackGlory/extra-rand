@@ -1,5 +1,5 @@
 import { IRandomNumberGenerator } from './types.js'
-import { NativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 import { random } from './random.js'
 
 export function randomBool(probabilityOfTrue: number): boolean
@@ -15,7 +15,7 @@ export function randomBool(...args:
   let probabilityOfTrue: number
 
   if (args.length === 1) {
-    generator = NativeRandomNumberGenerator
+    generator = nativeRandomNumberGenerator
     ;[probabilityOfTrue] = args
   } else {
     [generator, probabilityOfTrue] = args

@@ -1,5 +1,5 @@
 import { IRandomNumberGenerator } from './types.js'
 
-export const NativeRandomNumberGenerator: IRandomNumberGenerator = {
+export const nativeRandomNumberGenerator: IRandomNumberGenerator = {
   next: Math.random
 }

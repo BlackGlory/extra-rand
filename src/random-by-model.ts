@@ -5,7 +5,7 @@ import { random } from './random.js'
 import { randomInt } from './random-int.js'
 import { randomIntInclusive } from './random-int-inclusive.js'
 import { IRandomNumberGenerator } from './types.js'
-import { NativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
 export enum Type {
   Float
@@ -39,7 +39,7 @@ export function randomByModel(...args:
   let model: IRandomModel
 
   if (args.length === 1) {
-    generator = NativeRandomNumberGenerator
+    generator = nativeRandomNumberGenerator
     ;[model] = args
   } else {
     [generator, model] = args

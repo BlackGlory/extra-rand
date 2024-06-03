@@ -1,6 +1,6 @@
 import { mapToRange } from './map-to-range.js'
 import { IRandomNumberGenerator } from './types.js'
-import { NativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
 export function random(min: number, max: number): number
 export function random(
@@ -17,7 +17,7 @@ export function random(...args:
   let max: number
 
   if (args.length === 2) {
-    generator = NativeRandomNumberGenerator
+    generator = nativeRandomNumberGenerator
     ;[min, max] = args
   } else {
     [generator, min, max] = args

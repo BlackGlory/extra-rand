@@ -1,7 +1,7 @@
 import { randomIndexByWeight } from './random-index-by-weight.js'
 import { NonEmptyArray } from 'justypes'
 import { IRandomNumberGenerator } from './types.js'
-import { NativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
 export interface IWeighted {
   weight: number
@@ -20,7 +20,7 @@ export function randomWeighted<T extends IWeighted>(...args:
   let values: NonEmptyArray<T>
 
   if (args.length === 1) {
-    generator = NativeRandomNumberGenerator
+    generator = nativeRandomNumberGenerator
     ;[values] = args
   } else {
     [generator, values] = args

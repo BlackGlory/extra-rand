@@ -1,5 +1,5 @@
 import { IRandomNumberGenerator } from './types.js'
-import { NativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 import { randomInt } from './random-int.js'
 
 export function shuffle(arr: unknown[]): void
@@ -12,7 +12,7 @@ export function shuffle(...args:
   let arr: unknown[]
 
   if (args.length === 1) {
-    generator = NativeRandomNumberGenerator
+    generator = nativeRandomNumberGenerator
     ;[arr] = args
   } else {
     [generator, arr] = args
