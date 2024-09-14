@@ -61,7 +61,7 @@ type INumberModel =
   }
 | NonEmptyArray<{
     weight: number
-    value: INumberModel
+    model: INumberModel
   }>
 
 function randomNumber(model: INumberModel): number

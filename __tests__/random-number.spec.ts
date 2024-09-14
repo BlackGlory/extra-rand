@@ -81,11 +81,11 @@ describe.each([
     const model: INumberModel = [
       {
         weight: 20
-      , value: 0
+      , model: 0
       }
     , {
         weight: 80
-      , value: 1
+      , model: 1
       }
     ]
 

@@ -1,11 +1,11 @@
 import { Getter, NonEmptyArray } from 'justypes'
 import { isArray, isFunction, isNumber } from 'extra-utils'
-import { randomByWeightModel } from './random-by-weight-model.js'
 import { randomFloat } from './random-float.js'
 import { randomInt } from './random-int.js'
 import { randomIntInclusive } from './random-int-inclusive.js'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { randomPickWeightedItem } from './random-pick-weighted-item.js'
 
 export enum NumberType {
   Float
@@ -23,7 +23,7 @@ export type INumberModel =
   }
 | NonEmptyArray<{
     weight: number
-    value: INumberModel
+    model: INumberModel
   }>
 
 export function randomNumber(model: INumberModel): number
@@ -50,8 +50,8 @@ export function randomNumber(...args:
   } else if (isFunction(model)) {
     return model()
   } else if (isArray(model)) {
-    const subModel = randomByWeightModel(generator, model)
-    return randomNumber(generator, subModel)
+    const item = randomPickWeightedItem(generator, model)
+    return randomNumber(generator, item.model)
   } else {
     const { type, min, max } = model
     switch (type) {
