@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/BlackGlory/extra-rand/compare/v0.4.0...v0.4.1) (2024-09-14)
+
+
+### Features
+
+* improve `randomPickWeightedItem` ([fa5da42](https://github.com/BlackGlory/extra-rand/commit/fa5da42d2805b0e70352ef110a7dbde039643d15))
+
 ## [0.4.0](https://github.com/BlackGlory/extra-rand/compare/v0.3.3...v0.4.0) (2024-09-14)
 
 
