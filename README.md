@@ -96,11 +96,16 @@ function randomPickWeightedItem<T extends IWeightedItem>(
 ): T
 ```
 
-### shuffle
+### randomPickIndex
 ```ts
-function shuffle(arr: unknown[]): void
-function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
+function randomPickIndex(items: NonEmptyArray<unknown>): number
+function randomPickIndex(
+  generator: IRandomNumberGenerator
+, items: NonEmptyArray<unknown>
+): number
 ```
+
+The function returns an integer in the range `[0, weights.length]`.
 
 ### randomPickWeightedIndex
 ```ts
@@ -112,6 +117,12 @@ function randomPickWeightedIndex(
 ```
 
 The function returns an integer in the range `[0, weights.length]`.
+
+### shuffle
+```ts
+function shuffle(arr: unknown[]): void
+function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
+```
 
 ### randomByWeightModel
 ```ts

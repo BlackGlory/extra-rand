@@ -8,16 +8,19 @@ test.each([
 , randomPickItem.bind(null, nativeRandomNumberGenerator) as typeof randomPickItem
 ])('randomPickItem', randomPickItem => {
   const loops = 10000
-  const items: NonEmptyArray<number> = [0, 1]
+  const items: NonEmptyArray<'foo' | 'bar'> = ['foo', 'bar']
 
-  const counters = [0, 0]
+  const counters = {
+    foo: 0
+  , bar: 0
+  }
   for (let i = loops; i--;) {
     const result = randomPickItem(items)
     counters[result]++
   }
 
-  expect(counters[0] / loops).toBeGreaterThan(0.4)
-  expect(counters[0] / loops).toBeLessThan(0.6)
-  expect(counters[1] / loops).toBeGreaterThan(0.4)
-  expect(counters[1] / loops).toBeLessThan(0.6)
+  expect(counters.foo / loops).toBeGreaterThan(0.4)
+  expect(counters.foo / loops).toBeLessThan(0.6)
+  expect(counters.bar / loops).toBeGreaterThan(0.4)
+  expect(counters.bar / loops).toBeLessThan(0.6)
 })
