@@ -89,7 +89,13 @@ interface IWeightedItem {
   weight: number
 }
 
+function randomPickWeightedItem<T>(items: NonEmptyArray<T>, weights: NonEmptyArray<number>): T
 function randomPickWeightedItem<T extends IWeightedItem>(items: NonEmptyArray<T>): T
+function randomPickWeightedItem<T>(
+  generator: IRandomNumberGenerator
+, items: NonEmptyArray<T>
+, weights: NonEmptyArray<number>
+): T
 function randomPickWeightedItem<T extends IWeightedItem>(
   generator: IRandomNumberGenerator
 , items: NonEmptyArray<T>

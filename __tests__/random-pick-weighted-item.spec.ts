@@ -1,11 +1,25 @@
 import { describe, test, expect } from 'vitest'
-import { randomPickWeightedItem } from '@src/random-pick-weighted-item.js'
+import { IWeightedItem, randomPickWeightedItem } from '@src/random-pick-weighted-item.js'
 import { NonEmptyArray } from 'justypes'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
   randomPickWeightedItem
 , randomPickWeightedItem.bind(null, nativeRandomNumberGenerator) as typeof randomPickWeightedItem
+, (
+    (items: NonEmptyArray<IWeightedItem>) => randomPickWeightedItem(
+      items
+    , items.map(x => x.weight) as NonEmptyArray<number>
+    )
+  ) as typeof randomPickWeightedItem
+, (
+    (items: NonEmptyArray<IWeightedItem>) => (
+      randomPickWeightedItem.bind(null, nativeRandomNumberGenerator) as typeof randomPickWeightedItem
+    )(
+      items
+    , items.map(x => x.weight) as NonEmptyArray<number>
+    )
+  ) as typeof randomPickWeightedItem
 ])('randomPickWeightedItem', randomPickWeightedItem => {
   test('[0, 100]', () => {
     const items: NonEmptyArray<{
