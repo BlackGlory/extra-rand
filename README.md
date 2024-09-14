@@ -74,6 +74,25 @@ function randomBool(probabilityOfTrue: number): boolean
 function randomBool(generator: IRandomNumberGenerator, probabilityOfTrue: number): boolean
 ```
 
+### randomPickWeightedItem
+```ts
+interface IWeightedItem {
+  weight: number
+}
+
+function randomPickWeightedItem<T extends IWeightedItem>(items: NonEmptyArray<T>): T
+function randomPickWeightedItem<T extends IWeightedItem>(
+  generator: IRandomNumberGenerator
+, items: NonEmptyArray<T>
+): T
+```
+
+### shuffle
+```ts
+function shuffle(arr: unknown[]): void
+function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
+```
+
 ### randomIndexByWeight
 ```ts
 function randomIndexByWeight(weights: NonEmptyArray<number>): number
@@ -85,19 +104,6 @@ function randomIndexByWeight(
 
 The function returns an index of one of weights.
 
-### randomWeighted
-```ts
-interface IWeighted {
-  weight: number
-}
-
-function randomWeighted<T extends IWeighted>(values: NonEmptyArray<T>): T
-function randomWeighted<T extends IWeighted>(
-  generator: IRandomNumberGenerator
-, values: NonEmptyArray<T>
-): T
-```
-
 ### randomByWeightModel
 ```ts
 type IWeightModel<T> = NonEmptyArray<{
@@ -107,12 +113,6 @@ type IWeightModel<T> = NonEmptyArray<{
 
 function randomByWeightModel<T>(model: IWeightModel<T>): T
 function randomByWeightModel<T>(generator: IRandomNumberGenerator, model: IWeightModel<T>): T
-```
-
-### shuffle
-```ts
-function shuffle(arr: unknown[]): void
-function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
 ```
 
 ### mapToIndexByWeight

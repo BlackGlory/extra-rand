@@ -5,12 +5,12 @@ import { nativeRandomNumberGenerator } from '@src/native-random-number-generator
 describe.each([
   randomNumber
 , randomNumber.bind(null, nativeRandomNumberGenerator)
-])('randomByModel', randomByModel => {
+])('randomNumber', randomNumber => {
   test('number', () => {
     const model: IRandomModel = 0.5
 
     for (let i = 10000; i--;) {
-      const result = randomByModel(model)
+      const result = randomNumber(model)
 
       expect(result).toBe(model)
     }
@@ -21,7 +21,7 @@ describe.each([
     const model: IRandomModel = () => value
 
     for (let i = 10000; i--;) {
-      const result = randomByModel(model)
+      const result = randomNumber(model)
 
       expect(result).toBe(value)
     }
@@ -36,7 +36,7 @@ describe.each([
       }
 
       for (let i = 10000; i--;) {
-        const result = randomByModel(model)
+        const result = randomNumber(model)
 
         expect(result).toBeGreaterThanOrEqual(model.min)
         expect(result).toBeLessThan(model.max)
@@ -51,7 +51,7 @@ describe.each([
       }
 
       for (let i = 10000; i--;) {
-        const result = randomByModel(model)
+        const result = randomNumber(model)
 
         expect(Number.isInteger(result)).toBe(true)
         expect(result).toBeGreaterThanOrEqual(Math.ceil(model.min))
@@ -67,7 +67,7 @@ describe.each([
       }
 
       for (let i = 10000; i--;) {
-        const result = randomByModel(model)
+        const result = randomNumber(model)
 
         expect(Number.isInteger(result)).toBe(true)
         expect(result).toBeGreaterThanOrEqual(Math.ceil(model.min))
@@ -91,7 +91,7 @@ describe.each([
 
     const counters = [0, 0]
     for (let i = 10000; i--;) {
-      const result = randomByModel(model)
+      const result = randomNumber(model)
 
       counters[result]++
     }

@@ -1,14 +1,14 @@
 import { describe, test, expect } from 'vitest'
-import { randomWeighted } from '@src/random-weighted.js'
+import { randomPickWeightedItem } from '@src/random-pick-weighted-item.js'
 import { NonEmptyArray } from 'justypes'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
-  randomWeighted
-, randomWeighted.bind(null, nativeRandomNumberGenerator) as typeof randomWeighted
-])('randomWeighted', randomWeighted => {
+  randomPickWeightedItem
+, randomPickWeightedItem.bind(null, nativeRandomNumberGenerator) as typeof randomPickWeightedItem
+])('randomPickWeightedItem', randomPickWeightedItem => {
   test('[0, 100]', () => {
-    const values: NonEmptyArray<{
+    const items: NonEmptyArray<{
       weight: number
       value: number
     }> = [
@@ -17,14 +17,14 @@ describe.each([
     ]
 
     for (let i = 10000; i--;) {
-      const result = randomWeighted(values)
+      const result = randomPickWeightedItem(items)
 
-      expect(result).toBe(values[1])
+      expect(result).toBe(items[1])
     }
   })
 
   test('[100, 0]', () => {
-    const values: NonEmptyArray<{
+    const items: NonEmptyArray<{
       weight: number
       value: number
     }> = [
@@ -33,15 +33,15 @@ describe.each([
     ]
 
     for (let i = 10000; i--;) {
-      const result = randomWeighted(values)
+      const result = randomPickWeightedItem(items)
 
-      expect(result).toBe(values[0])
+      expect(result).toBe(items[0])
     }
   })
 
   test('[50, 50]', () => {
     const loops = 10000
-    const values: NonEmptyArray<{
+    const items: NonEmptyArray<{
       weight: number
       value: number
     }> = [
@@ -51,7 +51,7 @@ describe.each([
 
     const counters = [0, 0]
     for (let i = loops; i--;) {
-      const result = randomWeighted(values)
+      const result = randomPickWeightedItem(items)
       counters[result.value]++
     }
 
@@ -63,7 +63,7 @@ describe.each([
 
   test('[20, 80]', () => {
     const loops = 10000
-    const values: NonEmptyArray<{
+    const items: NonEmptyArray<{
       weight: number
       value: number
     }> = [
@@ -73,7 +73,7 @@ describe.each([
 
     const counters = [0, 0]
     for (let i = loops; i--;) {
-      const result = randomWeighted(values)
+      const result = randomPickWeightedItem(items)
       counters[result.value]++
     }
 

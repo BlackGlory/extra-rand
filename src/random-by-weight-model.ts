@@ -1,5 +1,5 @@
 import { NonEmptyArray } from 'justypes'
-import { randomWeighted } from './random-weighted.js'
+import { randomPickWeightedItem } from './random-pick-weighted-item.js'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
@@ -27,6 +27,6 @@ export function randomByWeightModel<T>(...args:
     [generator, model] = args
   }
 
-  const { value } = randomWeighted(generator, model)
+  const { value } = randomPickWeightedItem(generator, model)
   return value
 }

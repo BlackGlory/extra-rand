@@ -5,12 +5,12 @@ import { nativeRandomNumberGenerator } from '@src/native-random-number-generator
 test.each([
   randomFloat
 , randomFloat.bind(null, nativeRandomNumberGenerator)
-])('random', random => {
+])('randomFloat', randomFloat => {
   const min = 0.1
   const max = 9.9
 
   for (let i = 10000; i--;) {
-    const result = random(min, max)
+    const result = randomFloat(min, max)
 
     expect(result).toBeGreaterThanOrEqual(min)
     expect(result).toBeLessThan(max)
