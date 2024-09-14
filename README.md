@@ -124,17 +124,6 @@ function shuffle(arr: unknown[]): void
 function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
 ```
 
-### randomByWeightModel
-```ts
-type IWeightModel<T> = NonEmptyArray<{
-  weight: number
-  value: T
-}>
-
-function randomByWeightModel<T>(model: IWeightModel<T>): T
-function randomByWeightModel<T>(generator: IRandomNumberGenerator, model: IWeightModel<T>): T
-```
-
 ### mapToIndexByWeight
 ```ts
 function mapToIndexByWeight(
