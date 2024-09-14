@@ -105,7 +105,7 @@ function randomPickIndex(
 ): number
 ```
 
-The function returns an integer in the range `[0, weights.length]`.
+The function returns an integer in the range `[0, items.length]`.
 
 ### randomPickWeightedIndex
 ```ts
@@ -123,14 +123,3 @@ The function returns an integer in the range `[0, weights.length]`.
 function shuffle(arr: unknown[]): void
 function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
 ```
-
-### mapToIndexByWeight
-```ts
-function mapToIndexByWeight(
-  value: number
-, oldMin: number, oldMax: number
-, weights: NonEmptyArray<number>
-): number
-```
-
-A low-level function helps you to use random number generators other than `Math.random()`.

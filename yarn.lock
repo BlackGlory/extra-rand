@@ -1560,10 +1560,10 @@ extra-utils@^5.1.1:
     justypes "^4.2.0"
     lodash-es "^4.17.21"
 
-extra-utils@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/extra-utils/-/extra-utils-5.10.0.tgz#5a10ad44672664737a0dc27509386cd0c0554395"
-  integrity sha512-kltlFMhC/HfzHG/cK1qpYgGI2zcPut6xg38Hno4NgTravnkPU3GGBY4uPLwsbzayRwY/DcyIYr02m7Z5PNuTQg==
+extra-utils@^5.15.0:
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/extra-utils/-/extra-utils-5.15.0.tgz#b8244cca03346d69bb67788d6a0155db073d1b2d"
+  integrity sha512-N98i+7XJ4IuCSvsLUTuAj6WVipv4UHygfQBIbo4af9dtLGpbFPPW7lI/50uA0FqGl/MhOAXrmF6kuBT7qV9MVg==
   dependencies:
     justypes "^4.2.0"
     lodash-es "^4.17.21"

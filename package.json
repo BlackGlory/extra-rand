@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@blackglory/errors": "^3.0.3",
-    "extra-utils": "^5.10.0",
+    "extra-utils": "^5.15.0",
     "justypes": "^4.2.1"
   }
 }

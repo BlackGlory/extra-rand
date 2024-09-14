@@ -1,5 +1,5 @@
 import { NonEmptyArray } from 'justypes'
-import { mapToIndexByWeight } from './map-to-index-by-weight.js'
+import { remapToWeightedIndex } from 'extra-utils'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
@@ -22,9 +22,9 @@ export function randomPickWeightedIndex(...args:
     [generator, weights] = args
   }
 
-  return mapToIndexByWeight(
+  return remapToWeightedIndex(
     generator.next()
-  , 0, 1
+  , [0, 1]
   , weights
   )
 }

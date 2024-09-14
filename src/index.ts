@@ -10,5 +10,3 @@ export * from './random-pick-weighted-item.js'
 export * from './random-pick-index.js'
 export * from './random-pick-weighted-index.js'
 export * from './shuffle.js'
-
-export * from './map-to-index-by-weight.js'
