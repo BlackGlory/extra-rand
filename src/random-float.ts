@@ -1,4 +1,4 @@
-import { mapToRange } from './map-to-range.js'
+import { remap } from 'extra-utils'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
@@ -23,9 +23,9 @@ export function randomFloat(...args:
     [generator, min, max] = args
   }
 
-  return mapToRange(
+  return remap(
     generator.next()
-  , 0, 1
-  , min, max
+  , [0, 1]
+  , [min, max]
   )
 }

@@ -10,5 +10,4 @@ export * from './random-by-weight-model.js'
 export * from './random-number.js'
 export * from './shuffle.js'
 
-export * from './map-to-range.js'
 export * from './map-to-index-by-weight.js'

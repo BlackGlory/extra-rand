@@ -1,4 +1,4 @@
-import { mapToRange } from './map-to-range.js'
+import { remap } from 'extra-utils'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
@@ -26,9 +26,9 @@ export function randomIntInclusive(...args:
     [generator, min, max] = args
   }
 
-  return Math.floor(mapToRange(
+  return Math.floor(remap(
     generator.next()
-  , 0, 1
-  , Math.ceil(min), Math.floor(max) + 1
+  , [0, 1]
+  , [Math.ceil(min), Math.floor(max) + 1]
   ))
 }

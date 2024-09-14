@@ -1,5 +1,5 @@
 import { NonEmptyArray } from 'justypes'
-import { mapToRange } from './map-to-range.js'
+import { remap } from 'extra-utils'
 
 export function mapToIndexByWeight(
   value: number
@@ -10,13 +10,13 @@ export function mapToIndexByWeight(
   const newMax = weights.reduce((acc, cur) => acc + Math.max(cur, 0))
   if (newMax === 0) {
     // 只有在所有权重都小于等于0的情况下会进入此路径, 这时将所有权重都视为1.
-    const index = Math.floor(mapToRange(value, oldMin, oldMax, newMin, weights.length))
+    const index = Math.floor(remap(value, [oldMin, oldMax], [newMin, weights.length]))
 
     return index === weights.length
          ? weights.length - 1
          : index
   } else {
-    const newValue = mapToRange(value, oldMin, oldMax, newMin, newMax)
+    const newValue = remap(value, [oldMin, oldMax], [newMin, newMax])
 
     let remains = newMax
     for (let i = weights.length; i--;) {

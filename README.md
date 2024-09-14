@@ -115,17 +115,6 @@ function shuffle(arr: unknown[]): void
 function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
 ```
 
-### mapToRange
-```ts
-function mapToRange(
-  value: number
-, oldMin: number, oldMax: number
-, newMin: number, newMax: number
-): number
-```
-
-A low-level function helps you to use random number generators other than `Math.random()`.
-
 ### mapToIndexByWeight
 ```ts
 function mapToIndexByWeight(
