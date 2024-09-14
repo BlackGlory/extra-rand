@@ -1,6 +1,6 @@
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
-import { random } from './random.js'
+import { randomFloat } from './random-float.js'
 
 export function randomBool(probabilityOfTrue: number): boolean
 export function randomBool(
@@ -21,5 +21,5 @@ export function randomBool(...args:
     [generator, probabilityOfTrue] = args
   }
 
-  return random(generator, 0, 1) < probabilityOfTrue
+  return randomFloat(generator, 0, 1) < probabilityOfTrue
 }

@@ -1,7 +1,7 @@
 import { Getter, NonEmptyArray } from 'justypes'
 import { isArray, isFunction, isNumber } from 'extra-utils'
 import { randomByWeightModel } from './random-by-weight-model.js'
-import { random } from './random.js'
+import { randomFloat } from './random-float.js'
 import { randomInt } from './random-int.js'
 import { randomIntInclusive } from './random-int-inclusive.js'
 import { IRandomNumberGenerator } from './types.js'
@@ -26,12 +26,12 @@ export type IRandomModel =
     value: IRandomModel
   }>
 
-export function randomByModel(model: IRandomModel): number
-export function randomByModel(
+export function randomNumber(model: IRandomModel): number
+export function randomNumber(
   generator: IRandomNumberGenerator
 , model: IRandomModel
 ): number
-export function randomByModel(...args:
+export function randomNumber(...args:
 | [model: IRandomModel]
 | [generator: IRandomNumberGenerator, model: IRandomModel]
 ): number {
@@ -51,11 +51,11 @@ export function randomByModel(...args:
     return model()
   } else if (isArray(model)) {
     const subModel = randomByWeightModel(generator, model)
-    return randomByModel(generator, subModel)
+    return randomNumber(generator, subModel)
   } else {
     const { type, min, max } = model
     switch (type) {
-      case Type.Float: return random(generator, min, max)
+      case Type.Float: return randomFloat(generator, min, max)
       case Type.Integer: return randomInt(generator, min, max)
       case Type.IntegerInclusive: return randomIntInclusive(generator, min, max)
     }

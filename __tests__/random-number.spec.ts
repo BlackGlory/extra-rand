@@ -1,10 +1,10 @@
 import { describe, test, expect } from 'vitest'
-import { randomByModel, IRandomModel, Type } from '@src/random-by-model.js'
+import { randomNumber, IRandomModel, Type } from '@src/random-number.js'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
-  randomByModel
-, randomByModel.bind(null, nativeRandomNumberGenerator)
+  randomNumber
+, randomNumber.bind(null, nativeRandomNumberGenerator)
 ])('randomByModel', randomByModel => {
   test('number', () => {
     const model: IRandomModel = 0.5

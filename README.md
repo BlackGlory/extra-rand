@@ -15,13 +15,13 @@ interface IRandomNumberGenerator {
 }
 ```
 
-### random
+### randomFloat
 ```ts
-function random(min: number, max: number): number
-function random(generator: IRandomNumberGenerator, min: number, max: number): number
+function randomFloat(min: number, max: number): number
+function randomFloat(generator: IRandomNumberGenerator, min: number, max: number): number
 ```
 
-The function returns a number in the range `[min, max)`.
+The function returns a float in the range `[min, max)`.
 
 ### randomInt
 ```ts
@@ -42,6 +42,31 @@ function randomIntInclusive(
 ```
 
 The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`.
+
+### randomNumber
+```ts
+enum Type {
+  Float
+, Integer
+, IntegerInclusive
+}
+
+type IRandomModel =
+| number
+| Getter<number>
+| {
+    type: Type
+    min: number
+    max: number
+  }
+| NonEmptyArray<{
+    weight: number
+    value: IRandomModel
+  }>
+
+function randomNumber(model: IRandomModel): number
+function randomNumber(generator: IRandomNumberGenerator, model: IRandomModel): number
+```
 
 ### randomBool
 ```ts
@@ -82,32 +107,6 @@ type IWeightModel<T> = NonEmptyArray<{
 
 function randomByWeightModel<T>(model: IWeightModel<T>): T
 function randomByWeightModel<T>(generator: IRandomNumberGenerator, model: IWeightModel<T>): T
-```
-
-### randomByModel
-```ts
-enum Type {
-  Float
-, Integer
-, IntegerInclusive
-}
-
-type IRandomModel =
-| number
-| Getter<number>
-| {
-    type: Type
-    min: number
-    max: number
-  }
-| NonEmptyArray<{
-    weight: number
-    value: IRandomModel
-  }>
-
-
-function randomByModel(model: IRandomModel): number
-function randomByModel(generator: IRandomNumberGenerator, model: IRandomModel): number
 ```
 
 ### shuffle

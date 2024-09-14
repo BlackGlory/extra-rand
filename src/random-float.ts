@@ -2,13 +2,13 @@ import { mapToRange } from './map-to-range.js'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
-export function random(min: number, max: number): number
-export function random(
+export function randomFloat(min: number, max: number): number
+export function randomFloat(
   generator: IRandomNumberGenerator
 , min: number
 , max: number
 ): number
-export function random(...args:
+export function randomFloat(...args:
 | [min: number, max: number]
 | [generator: IRandomNumberGenerator, min: number, max: number]
 ): number {
