@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/BlackGlory/extra-rand/compare/v0.3.3...v0.4.0) (2024-09-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removed `mapToIndexByWeight`
+* Removed `randomByWeightModel`
+* Renamed `randomIndexByWeight` to
+`randomPickWeightedIndex`
+* Modified `INumberModel`
+* - Renamed `Type` to `NumberType`
+- Renamed `IRandomModel` to `INumberModel`
+* - Renamed `randomWeighted` to `randomPickWeightedItem`
+- Renamed `IWeighted` to `IWeightedItem`
+* Removed `mapToRange`
+* - Renamed `randomByModel` to `randomNumber`
+- Renamed `random` to `randomFloat`
+
+### Features
+
+* add `randomPickIndex` ([f0c3f70](https://github.com/BlackGlory/extra-rand/commit/f0c3f70277d385642ae20f45df88404a56f26fff))
+* add `randomPickItem` ([d131502](https://github.com/BlackGlory/extra-rand/commit/d131502156b25624e6128002110d7294b6ae5d68))
+* remove `mapToIndexByWeight` ([b58f771](https://github.com/BlackGlory/extra-rand/commit/b58f7715015cd16083323b703bd1b9882f2d817e))
+* remove `randomByWeightModel` ([9e74edd](https://github.com/BlackGlory/extra-rand/commit/9e74edda50aea1f64217682f86e6a81ee6c2b8f2))
+
+
+* rename ([b0082df](https://github.com/BlackGlory/extra-rand/commit/b0082dfe489d5d66f284a50d94c739cb7a1095ee))
+* rename ([c47f81a](https://github.com/BlackGlory/extra-rand/commit/c47f81abf1c6e82b1a5b803ae2604314108aaa51))
+* rename ([cff7cae](https://github.com/BlackGlory/extra-rand/commit/cff7cae56de69ff9479cbd08ec48c85e8482cd81))
+* rename ([2052445](https://github.com/BlackGlory/extra-rand/commit/2052445ff4790415ae6db92e083017fbaf3430f8))
+* rename ([bf51e8d](https://github.com/BlackGlory/extra-rand/commit/bf51e8d68f0c61a9440df5a80a769651a2694866))
+* replace `mapToRange` with `remap` from `extra-utils` ([547b7ff](https://github.com/BlackGlory/extra-rand/commit/547b7ffc7ee15d7e56f783ca49e8185974d199c9))
+
 ### [0.3.3](https://github.com/BlackGlory/extra-rand/compare/v0.3.2...v0.3.3) (2024-07-19)
 
 ### [0.3.2](https://github.com/BlackGlory/extra-rand/compare/v0.3.1...v0.3.2) (2024-05-13)
