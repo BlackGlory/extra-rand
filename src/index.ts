@@ -5,6 +5,7 @@ export * from './random-int.js'
 export * from './random-int-inclusive.js'
 export * from './random-number.js'
 export * from './random-bool.js'
+export * from './random-pick-item.js'
 export * from './random-pick-weighted-item.js'
 export * from './shuffle.js'
 

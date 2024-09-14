@@ -74,6 +74,15 @@ function randomBool(probabilityOfTrue: number): boolean
 function randomBool(generator: IRandomNumberGenerator, probabilityOfTrue: number): boolean
 ```
 
+### randomPickItem
+```ts
+function randomPickItem<T>(items: NonEmptyArray<T>): T
+function randomPickItem<T>(
+  generator: IRandomNumberGenerator
+, items: NonEmptyArray<T>
+): T
+```
+
 ### randomPickWeightedItem
 ```ts
 interface IWeightedItem {
