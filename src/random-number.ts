@@ -7,36 +7,36 @@ import { randomIntInclusive } from './random-int-inclusive.js'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
-export enum Type {
+export enum NumberType {
   Float
 , Integer
 , IntegerInclusive
 }
 
-export type IRandomModel =
+export type INumberModel =
 | number
 | Getter<number>
 | {
-    type: Type
+    type: NumberType
     min: number
     max: number
   }
 | NonEmptyArray<{
     weight: number
-    value: IRandomModel
+    value: INumberModel
   }>
 
-export function randomNumber(model: IRandomModel): number
+export function randomNumber(model: INumberModel): number
 export function randomNumber(
   generator: IRandomNumberGenerator
-, model: IRandomModel
+, model: INumberModel
 ): number
 export function randomNumber(...args:
-| [model: IRandomModel]
-| [generator: IRandomNumberGenerator, model: IRandomModel]
+| [model: INumberModel]
+| [generator: IRandomNumberGenerator, model: INumberModel]
 ): number {
   let generator: IRandomNumberGenerator
-  let model: IRandomModel
+  let model: INumberModel
 
   if (args.length === 1) {
     generator = nativeRandomNumberGenerator
@@ -55,9 +55,9 @@ export function randomNumber(...args:
   } else {
     const { type, min, max } = model
     switch (type) {
-      case Type.Float: return randomFloat(generator, min, max)
-      case Type.Integer: return randomInt(generator, min, max)
-      case Type.IntegerInclusive: return randomIntInclusive(generator, min, max)
+      case NumberType.Float: return randomFloat(generator, min, max)
+      case NumberType.Integer: return randomInt(generator, min, max)
+      case NumberType.IntegerInclusive: return randomIntInclusive(generator, min, max)
     }
   }
 }

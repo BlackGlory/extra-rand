@@ -45,27 +45,27 @@ The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`
 
 ### randomNumber
 ```ts
-enum Type {
+enum NumberType {
   Float
 , Integer
 , IntegerInclusive
 }
 
-type IRandomModel =
+type INumberModel =
 | number
 | Getter<number>
 | {
-    type: Type
+    type: NumberType
     min: number
     max: number
   }
 | NonEmptyArray<{
     weight: number
-    value: IRandomModel
+    value: INumberModel
   }>
 
-function randomNumber(model: IRandomModel): number
-function randomNumber(generator: IRandomNumberGenerator, model: IRandomModel): number
+function randomNumber(model: INumberModel): number
+function randomNumber(generator: IRandomNumberGenerator, model: INumberModel): number
 ```
 
 ### randomBool

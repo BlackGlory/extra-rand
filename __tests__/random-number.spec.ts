@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { randomNumber, IRandomModel, Type } from '@src/random-number.js'
+import { randomNumber, INumberModel, NumberType } from '@src/random-number.js'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
@@ -7,7 +7,7 @@ describe.each([
 , randomNumber.bind(null, nativeRandomNumberGenerator)
 ])('randomNumber', randomNumber => {
   test('number', () => {
-    const model: IRandomModel = 0.5
+    const model: INumberModel = 0.5
 
     for (let i = 10000; i--;) {
       const result = randomNumber(model)
@@ -18,7 +18,7 @@ describe.each([
 
   test('getter', () => {
     const value = 0.5
-    const model: IRandomModel = () => value
+    const model: INumberModel = () => value
 
     for (let i = 10000; i--;) {
       const result = randomNumber(model)
@@ -29,8 +29,8 @@ describe.each([
 
   describe('min, max', () => {
     test('float', () => {
-      const model: IRandomModel = {
-        type: Type.Float
+      const model: INumberModel = {
+        type: NumberType.Float
       , min: 0.1
       , max: 9.9
       }
@@ -44,8 +44,8 @@ describe.each([
     })
 
     test('integer', () => {
-      const model: IRandomModel = {
-        type: Type.Integer
+      const model: INumberModel = {
+        type: NumberType.Integer
       , min: 0.1
       , max: 9.9
       }
@@ -60,8 +60,8 @@ describe.each([
     })
 
     test('integer inclusive', () => {
-      const model: IRandomModel = {
-        type: Type.IntegerInclusive
+      const model: INumberModel = {
+        type: NumberType.IntegerInclusive
       , min: 0.1
       , max: 9.9
       }
@@ -78,7 +78,7 @@ describe.each([
 
   test('weighted', () => {
     const loops = 10000
-    const model: IRandomModel = [
+    const model: INumberModel = [
       {
         weight: 20
       , value: 0
