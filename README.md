@@ -102,16 +102,16 @@ function shuffle(arr: unknown[]): void
 function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
 ```
 
-### randomIndexByWeight
+### randomPickWeightedIndex
 ```ts
-function randomIndexByWeight(weights: NonEmptyArray<number>): number
-function randomIndexByWeight(
+function randomPickWeightedIndex(weights: NonEmptyArray<number>): number
+function randomPickWeightedIndex(
   generator: IRandomNumberGenerator
 , weights: NonEmptyArray<number>
 ): number
 ```
 
-The function returns an index of one of weights.
+The function returns an integer in the range `[0, weights.length]`.
 
 ### randomByWeightModel
 ```ts

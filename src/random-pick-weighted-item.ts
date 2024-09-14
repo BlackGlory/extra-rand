@@ -1,4 +1,4 @@
-import { randomIndexByWeight } from './random-index-by-weight.js'
+import { randomPickWeightedIndex } from './random-pick-weighted-index.js'
 import { NonEmptyArray } from 'justypes'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
@@ -27,6 +27,6 @@ export function randomPickWeightedItem<T extends IWeightedItem>(...args:
   }
 
   const weights = items.map(option => option.weight) as NonEmptyArray<number>
-  const index = randomIndexByWeight(generator, weights)
+  const index = randomPickWeightedIndex(generator, weights)
   return items[index]
 }

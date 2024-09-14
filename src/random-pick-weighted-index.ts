@@ -3,12 +3,12 @@ import { mapToIndexByWeight } from './map-to-index-by-weight.js'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 
-export function randomIndexByWeight(weights: NonEmptyArray<number>): number
-export function randomIndexByWeight(
+export function randomPickWeightedIndex(weights: NonEmptyArray<number>): number
+export function randomPickWeightedIndex(
   generator: IRandomNumberGenerator
 , weights: NonEmptyArray<number>
 ): number
-export function randomIndexByWeight(...args:
+export function randomPickWeightedIndex(...args:
 | [weights: NonEmptyArray<number>]
 | [generator: IRandomNumberGenerator, weights: NonEmptyArray<number>]
 ): number {

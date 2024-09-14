@@ -1,17 +1,17 @@
 import { describe, test, expect } from 'vitest'
-import { randomIndexByWeight } from '@src/random-index-by-weight.js'
+import { randomPickWeightedIndex } from '@src/random-pick-weighted-index.js'
 import { NonEmptyArray } from 'justypes'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([
-  randomIndexByWeight
-, randomIndexByWeight.bind(null, nativeRandomNumberGenerator)
-])('randomIndexByWeight', randomIndexByWeight => {
+  randomPickWeightedIndex
+, randomPickWeightedIndex.bind(null, nativeRandomNumberGenerator)
+])('randomPickWeightedIndex', randomPickWeightedIndex => {
   test('[0, 100]', () => {
     const weights: NonEmptyArray<number> = [0, 100]
 
     for (let i = 10000; i--;) {
-      const index = randomIndexByWeight(weights)
+      const index = randomPickWeightedIndex(weights)
 
       expect(index === 1).toBe(true)
     }
@@ -21,7 +21,7 @@ describe.each([
     const weights: NonEmptyArray<number> = [100, 0]
 
     for (let i = 10000; i--;) {
-      const index = randomIndexByWeight(weights)
+      const index = randomPickWeightedIndex(weights)
 
       expect(index === 0).toBe(true)
     }
@@ -33,7 +33,7 @@ describe.each([
 
     const counters = [0, 0]
     for (let i = loops; i--;) {
-      const index = randomIndexByWeight(weights)
+      const index = randomPickWeightedIndex(weights)
       counters[index]++
     }
 
@@ -49,7 +49,7 @@ describe.each([
 
     const counters = [0, 0]
     for (let i = loops; i--;) {
-      const index = randomIndexByWeight(weights)
+      const index = randomPickWeightedIndex(weights)
       counters[index]++
     }
 
