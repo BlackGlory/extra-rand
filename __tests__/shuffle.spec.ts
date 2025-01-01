@@ -1,7 +1,11 @@
 import { test, expect } from 'vitest'
 import { shuffle } from '@src/shuffle.js'
+import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
-test('shuffle', () => {
+test.each([
+  shuffle
+, shuffle.bind(null, nativeRandomNumberGenerator)
+])('shuffle', () => {
   const arr = [1, 2, 3, 4, 5]
 
   for (let i = 10000; i--;) {
