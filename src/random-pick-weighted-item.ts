@@ -1,5 +1,5 @@
 import { randomPickWeightedIndex } from './random-pick-weighted-index.js'
-import { NonEmptyArray } from 'justypes'
+import { NonEmptyArray } from '@blackglory/prelude'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
 import { isArray } from 'extra-utils'

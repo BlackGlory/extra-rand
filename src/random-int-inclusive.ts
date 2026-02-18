@@ -1,7 +1,7 @@
 import { remap } from 'extra-utils'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
-import { assert } from '@blackglory/errors'
+import { assert } from '@blackglory/prelude'
 
 export function randomIntInclusive(
   min: number

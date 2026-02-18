@@ -18,7 +18,7 @@ export function shuffle(...args:
     [generator, arr] = args
   }
 
-  for (let targetIndex = arr.length - 1; targetIndex > 1; targetIndex--) {
+  for (let targetIndex = arr.length - 1; targetIndex >= 1; targetIndex--) {
     const index = randomInt(generator, 0, targetIndex)
     const temp = arr[targetIndex]
     arr[targetIndex] = arr[index]

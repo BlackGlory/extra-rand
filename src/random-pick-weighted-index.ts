@@ -1,4 +1,4 @@
-import { NonEmptyArray } from 'justypes'
+import { NonEmptyArray } from '@blackglory/prelude'
 import { remapToWeightedIndex } from 'extra-utils'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'

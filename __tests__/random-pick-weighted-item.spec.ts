@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
 import { IWeightedItem, randomPickWeightedItem } from '@src/random-pick-weighted-item.js'
-import { NonEmptyArray } from 'justypes'
+import { NonEmptyArray } from '@blackglory/prelude'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 describe.each([

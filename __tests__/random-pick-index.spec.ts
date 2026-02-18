@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest'
 import { randomPickIndex } from '@src/random-pick-index.js'
-import { NonEmptyArray } from 'justypes'
+import { NonEmptyArray } from '@blackglory/prelude'
 import { nativeRandomNumberGenerator } from '@src/native-random-number-generator.js'
 
 test.each([

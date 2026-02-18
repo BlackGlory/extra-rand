@@ -1,4 +1,4 @@
-import { Getter, NonEmptyArray } from 'justypes'
+import { Getter, NonEmptyArray } from '@blackglory/prelude'
 import { isArray, isFunction, isNumber } from 'extra-utils'
 import { randomFloat } from './random-float.js'
 import { randomInt } from './random-int.js'
