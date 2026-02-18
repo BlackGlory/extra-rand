@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/BlackGlory/extra-rand/compare/v0.4.1...v0.5.0) (2026-02-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **shuffle:** Node.js v18 => Node.js v22
+* **random-int, random-int-inclusive:** - The `randomInt` no longer allow non-integer ranges.
+- The `randomIntInclusive` no longer allow non-integer ranges.
+- The `randomNumber` no longer allow non-integer ranges
+  when the model type is `Integer` or `IntegerInclusive`.
+
+### Features
+
+* **random-int, random-int-inclusive:** no longer allow non-integer ranges ([f1263b2](https://github.com/BlackGlory/extra-rand/commit/f1263b23eea206db3e19921fc6872ec0f2df3712))
+
+
+### Bug Fixes
+
+* **shuffle:** make the shuffle result uniform ([eeba4da](https://github.com/BlackGlory/extra-rand/commit/eeba4daf401aa5a2cac8b392fcc3072d05d4dcfd))
+
 ### [0.4.1](https://github.com/BlackGlory/extra-rand/compare/v0.4.0...v0.4.1) (2024-09-14)
 
 
