@@ -6,14 +6,14 @@ test.each([
   randomIntInclusive
 , randomIntInclusive.bind(null, nativeRandomNumberGenerator)
 ])('randomIntInclusive', randomIntInclusive => {
-  const min = 0.1
-  const max = 9.9
+  const min = 0
+  const max = 10
 
   for (let i = 10000; i--;) {
     const result = randomIntInclusive(min, max)
 
     expect(Number.isInteger(result)).toBe(true)
-    expect(result).toBeGreaterThanOrEqual(Math.ceil(min))
-    expect(result).toBeLessThanOrEqual(Math.floor(max))
+    expect(result).toBeGreaterThanOrEqual(min)
+    expect(result).toBeLessThanOrEqual(max)
   }
 })

@@ -29,7 +29,7 @@ function randomInt(min: number, max: number): number
 function randomInt(generator: IRandomNumberGenerator, min: number, max: number): number
 ```
 
-The function returns an integer in the range `[Math.ceil(min), Math.floor(max))`.
+The function returns an integer in the range `[min, max)`.
 
 ### randomIntInclusive
 ```ts
@@ -41,7 +41,7 @@ function randomIntInclusive(
 ): number
 ```
 
-The function returns an integer in the range `[Math.ceil(min), Math.floor(max)]`.
+The function returns an integer in the range `[min, max]`.
 
 ### randomNumber
 ```ts

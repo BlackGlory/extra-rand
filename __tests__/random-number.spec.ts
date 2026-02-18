@@ -46,8 +46,8 @@ describe.each([
     test('integer', () => {
       const model: INumberModel = {
         type: NumberType.Integer
-      , min: 0.1
-      , max: 9.9
+      , min: 0
+      , max: 10
       }
 
       for (let i = 10000; i--;) {
@@ -62,8 +62,8 @@ describe.each([
     test('integer inclusive', () => {
       const model: INumberModel = {
         type: NumberType.IntegerInclusive
-      , min: 0.1
-      , max: 9.9
+      , min: 0
+      , max: 10
       }
 
       for (let i = 10000; i--;) {

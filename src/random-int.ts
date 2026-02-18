@@ -1,6 +1,7 @@
 import { remap } from 'extra-utils'
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
+import { assert } from '@blackglory/errors'
 
 export function randomInt(min: number, max: number): number
 export function randomInt(
@@ -22,10 +23,13 @@ export function randomInt(...args:
   } else {
     [generator, min, max] = args
   }
+  assert(Number.isInteger(min), 'The parameter min must be an integer')
+  assert(Number.isInteger(max), 'The parameter max must be an integer')
+  assert(min < max, 'The parameter min must be less than the parameter max')
 
   return Math.floor(remap(
     generator.next()
   , [0, 1]
-  , [Math.ceil(min), Math.floor(max)]
+  , [min, max]
   ))
 }
