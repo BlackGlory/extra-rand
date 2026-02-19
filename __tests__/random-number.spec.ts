@@ -54,8 +54,8 @@ describe.each([
         const result = randomNumber(model)
 
         expect(Number.isInteger(result)).toBe(true)
-        expect(result).toBeGreaterThanOrEqual(Math.ceil(model.min))
-        expect(result).toBeLessThan(Math.floor(model.max))
+        expect(result).toBeGreaterThanOrEqual(model.min)
+        expect(result).toBeLessThan(model.max)
       }
     })
 
@@ -70,8 +70,8 @@ describe.each([
         const result = randomNumber(model)
 
         expect(Number.isInteger(result)).toBe(true)
-        expect(result).toBeGreaterThanOrEqual(Math.ceil(model.min))
-        expect(result).toBeLessThanOrEqual(Math.floor(model.max))
+        expect(result).toBeGreaterThanOrEqual(model.min)
+        expect(result).toBeLessThanOrEqual(model.max)
       }
     })
   })
