@@ -111,7 +111,7 @@ function randomPickIndex(
 ): number
 ```
 
-The function returns an integer in the range `[0, items.length]`.
+The function returns an integer in the range `[0, items.length - 1]`.
 
 ### randomPickWeightedIndex
 ```ts
@@ -122,7 +122,7 @@ function randomPickWeightedIndex(
 ): number
 ```
 
-The function returns an integer in the range `[0, weights.length]`.
+The function returns an integer in the range `[0, weights.length - 1]`.
 
 ### shuffle
 ```ts
