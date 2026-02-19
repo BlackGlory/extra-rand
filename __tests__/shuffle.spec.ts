@@ -10,18 +10,18 @@ describe.each([
 , shuffle.bind(null, nativeRandomNumberGenerator)
 ])('shuffle', () => {
   test('general', () => {
-    const arr = [1, 2, 3, 4, 5]
-
     for (let i = 10000; i--;) {
-      shuffle(arr)
-    }
+      const arr = [1, 2, 3, 4, 5]
 
-    expect(arr.length).toBe(5)
-    expect(arr.filter(x => x === 1).length).toBe(1)
-    expect(arr.filter(x => x === 2).length).toBe(1)
-    expect(arr.filter(x => x === 3).length).toBe(1)
-    expect(arr.filter(x => x === 4).length).toBe(1)
-    expect(arr.filter(x => x === 5).length).toBe(1)
+      shuffle(arr)
+
+      expect(arr.length).toBe(5)
+      expect(arr.filter(x => x === 1).length).toBe(1)
+      expect(arr.filter(x => x === 2).length).toBe(1)
+      expect(arr.filter(x => x === 3).length).toBe(1)
+      expect(arr.filter(x => x === 4).length).toBe(1)
+      expect(arr.filter(x => x === 5).length).toBe(1)
+    }
   })
 
   test.each([
@@ -38,10 +38,12 @@ describe.each([
     )
 
     for (let i = times; i--;) {
-      shuffle(arr)
+      const arrClone = [...arr]
 
-      for (let i = 0; i < arr.length; i++) {
-        indexToValueCount[i][arr[i]]++
+      shuffle(arrClone)
+
+      for (let i = 0; i < arrClone.length; i++) {
+        indexToValueCount[i][arrClone[i]]++
       }
     }
 

@@ -1,6 +1,6 @@
 import { IRandomNumberGenerator } from './types.js'
 import { nativeRandomNumberGenerator } from './native-random-number-generator.js'
-import { randomInt } from './random-int.js'
+import { randomIntInclusive } from './random-int-inclusive.js'
 
 export function shuffle(arr: unknown[]): void
 export function shuffle(generator: IRandomNumberGenerator, arr: unknown[]): void
@@ -18,8 +18,9 @@ export function shuffle(...args:
     [generator, arr] = args
   }
 
+  // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
   for (let targetIndex = arr.length - 1; targetIndex >= 1; targetIndex--) {
-    const index = randomInt(generator, 0, targetIndex)
+    const index = randomIntInclusive(generator, 0, targetIndex)
     const temp = arr[targetIndex]
     arr[targetIndex] = arr[index]
     arr[index] = temp
